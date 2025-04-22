@@ -34,12 +34,13 @@ if uploaded_files:
             df = pd.read_csv(file)
         elif file_ext == ".xlsx":
             df = pd.read_excel(file)
+            st.dataframe(df.head())
         else:
             st.error(f"Unsupported file type: {file_ext}")
             continue
 #file details
 st.write(" Preview the head of the Dataframe")
-st.dataframe(df.head())
+
 
 #data cleaning options
 st.subheader("Data Cleaning option")

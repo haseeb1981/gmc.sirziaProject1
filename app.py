@@ -39,7 +39,8 @@ if uploaded_files:
             continue
 #file details
 st.write(" Preview the head of the Dataframe")
-st.dataframe(df.head(None))
+st.dataframe(df.head())
+
 #data cleaning options
 st.subheader("Data Cleaning option")
 if st.checkbox(f"Clean data for{file.name}"):
@@ -81,9 +82,10 @@ mime_type = "application/vnd.openxmlformat-officedocument.spreadsheetml.sheet"
 Buffer.seek(0)
 
 st.download_button(
-    label=f"Download {file_name} as {conversion_type}",
+    label=f"Download {file.name} as {conversion_type}" ,
     data=Buffer,
     file_name=file_name,
     mime=mime_type
 )
-st.success(" All file processed successfully!")
+
+st.success("All file  processed successfully! ")

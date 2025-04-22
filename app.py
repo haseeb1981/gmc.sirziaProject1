@@ -40,7 +40,6 @@ if uploaded_files:
 #file details
 st.write(" Preview the head of the Dataframe")
 st.dataframe(df.head(None))
-
 #data cleaning options
 st.subheader("Data Cleaning option")
 if st.checkbox(f"Clean data for{file.name}"):
